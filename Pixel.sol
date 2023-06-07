@@ -1217,7 +1217,7 @@ contract EXTREMEpixel is ERC721, ERC721URIStorage, Ownable {
     uint256 public Round;
     bool public isMintEnabled;
 
-    mapping(address => uint256) public GetMintID;
+    mapping(address => uint256) public LastMintID;
 
     event TransferReceived(address from, uint256 amount);
 
@@ -1248,6 +1248,10 @@ contract EXTREMEpixel is ERC721, ERC721URIStorage, Ownable {
     function SetaBaseURI(string memory newUr) public onlyOwner {
         baseURI = newUr;
     }
+    
+    function totalSupply() public view returns (uint256) {
+        return Supply;
+    }
 
     function _baseURI() internal view virtual override returns (string memory) {
         return baseURI;
@@ -1257,12 +1261,12 @@ contract EXTREMEpixel is ERC721, ERC721URIStorage, Ownable {
         public
         payable    
     {
-        GetMintID[msg.sender] = Supply;
+        LastMintID[msg.sender] = Supply;
         require(isMintEnabled, "Mint not enabled");
         require(_mintAmount > 0, "MintAmount should be greater than 0");
         require(Maxsupply > Supply + _mintAmount, "Max supply exausted");
         require(msg.value >= Cost * _mintAmount, "Wrong value");
-        uint256 Supply = totalSupply();
+        Supply = Supply + _mintAmount;
         
         
     
