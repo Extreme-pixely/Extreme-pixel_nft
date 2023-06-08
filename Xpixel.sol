@@ -1208,7 +1208,7 @@ pragma solidity ^0.8.4;
 
 
 
-contract CoreNFTs is ERC721, ERC721URIStorage, Ownable {
+contract XtremePixel is ERC721, ERC721URIStorage, Ownable {
  
     
     string public URI;
@@ -1224,7 +1224,7 @@ contract CoreNFTs is ERC721, ERC721URIStorage, Ownable {
 
     event TransferReceived(address from, uint256 amount);
 
-    constructor() payable ERC721("CoreNfts", "CNFTs") {
+    constructor() payable ERC721("XtremePixel", "XP") {
         total_value = msg.value;
    
     }
