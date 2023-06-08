@@ -1251,7 +1251,7 @@ contract CorePunks is ERC721Enumerable, Ownable {
    
   ) ERC721(_name, _symbol) {
     setBaseURI(_initBaseURI);
-    setNotRevealedURI(_initNotRevealedUri);
+    setNotRevealedURI(
   }
 
   // internal
