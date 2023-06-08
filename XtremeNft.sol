@@ -147,7 +147,7 @@ contract TheStripesNFT is ERC721Enumerable, Ownable {
 
     function withdraw() public onlyOwner {
         require(payable(msg.sender).send(address(this).balance));
-            value: 
+         
       
        
     }
