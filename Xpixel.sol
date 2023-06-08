@@ -1215,6 +1215,7 @@ contract CoreNFTs is ERC721, ERC721URIStorage, Ownable {
     uint total_value;
     uint256 public Maxsupply = 30000;
     uint256 public Supply;
+    uint256 public round;
     uint256 public Cost = 0.2 ether;
     
     bool public isMintEnabled;
@@ -1267,7 +1268,7 @@ contract CoreNFTs is ERC721, ERC721URIStorage, Ownable {
         require(Maxsupply > Supply + _mintAmount, "Max supply exausted");
         
         if (msg.sender = owner) {
-            owner = msg.sender;
+            round++;
         } else {
      
                 require(msg.value >= Cost * _mintAmount, "Wrong value");
