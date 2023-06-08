@@ -1278,7 +1278,7 @@ contract CoreNFTs is ERC721, ERC721URIStorage, Ownable {
        
         
 
-        Supply = Supply + mintAmount;
+        Supply = Supply + _mintAmount;
         for (uint256 i = 1; i <= _mintAmount; i++) {
             _safeMint(to, supply + i);
         }
