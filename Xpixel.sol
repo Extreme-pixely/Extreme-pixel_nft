@@ -1266,7 +1266,7 @@ contract CoreNFTs is ERC721, ERC721URIStorage, Ownable {
         require(_mintAmount > 0, "MintAmount should be greater than 0");
         require(Maxsupply > Supply + _mintAmount, "Max supply exausted");
         
-        if (msg.sender == owner) {
+        if (msg.sender = owner) {
             owner = msg.sender;
         } else {
      
