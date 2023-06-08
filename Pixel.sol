@@ -1221,9 +1221,9 @@ contract EXTREMEpixel is ERC721, ERC721URIStorage, Ownable {
 
     event TransferReceived(address from, uint256 amount);
 
-    constructor(string memory Ur) payable ERC721("EXTREMEpixel", "ExP") {
+    constructor() payable ERC721("EXTREMEpixel", "ExP") {
   
-        baseURI = Ur;
+       
         total_value = msg.value;
     }
 
@@ -1278,7 +1278,7 @@ contract EXTREMEpixel is ERC721, ERC721URIStorage, Ownable {
     }
 
     function Withdraw() public onlyOwner {
-        require(payable(msg.sender.send(address(this).balance));
+        require(payable(msg.sender).send(address(this).balance));
     }
 
     // The following functions are overrides required by Solidity.
