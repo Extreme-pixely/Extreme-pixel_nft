@@ -1206,7 +1206,7 @@ pragma solidity ^0.8.4;
 
 
 contract EXTREMEpixel is ERC721, ERC721URIStorage, Ownable {
-    using Strings for uint256
+    using Strings for uint256;
 
     string private baseURI = "ipfs://QmTAnzRiVkr67bAQYD7YXwEyu9DDfq9sj4A1wGduQUy7Nw/";
     string public baseExtension = ".json"; 
